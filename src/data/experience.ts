@@ -8,39 +8,53 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    role: "Senior Software Engineer",
-    company: "Tech Company",
-    period: "2024 - Present",
-    description:
-      "Leading frontend architecture and mentoring junior developers on a high-traffic SaaS platform.",
-    highlights: [
-      "Architected a micro-frontend system serving 100K+ daily users",
-      "Reduced page load times by 40% through performance optimization",
-      "Mentored a team of 4 junior developers",
-    ],
-  },
-  {
     role: "Software Engineer",
-    company: "Startup Inc.",
-    period: "2022 - 2024",
+    company: "Smart Liberia",
+    period: "November 2025 – Present",
     description:
-      "Built and shipped full-stack features for a B2B analytics platform from early stage to Series A.",
+      "Building and maintaining digital solutions that support government and public-sector services in Liberia.",
     highlights: [
-      "Developed real-time analytics dashboard with WebSocket integration",
-      "Implemented CI/CD pipeline reducing deployment time by 60%",
-      "Built RESTful APIs handling 1M+ requests per day",
+      "Develop and maintain web applications using modern frontend and backend technologies",
+      "Collaborate with cross-functional teams to design, implement, and improve software solutions",
+      "Build and integrate RESTful APIs for data management and system interoperability",
+      "Contribute to database design, optimization, and application performance improvements",
     ],
   },
   {
-    role: "Junior Developer",
-    company: "Digital Agency",
-    period: "2021 - 2022",
+    role: "Software Engineer, Data",
+    company: "OnTime",
+    period: "March 2024 – Present",
     description:
-      "Developed responsive web applications and landing pages for various clients across industries.",
+      "Collaborator on OnTime, a real-time visitor-management system used at the Orange Digital Center (ODC).",
     highlights: [
-      "Delivered 15+ client projects on time and within budget",
-      "Introduced component library reducing development time by 30%",
-      "Collaborated with design team to implement pixel-perfect UIs",
+      "Streamlined visitor registration, check-in, and check-out while capturing key details like name, host, reason for visit, and timestamps",
+      "Replaced a manual check-in/item-verification process built to prevent theft with a faster digital flow",
+      "Built a web-based admin interface for tracking visitor records and generating reports",
+    ],
+  },
+  {
+    role: "Software Engineer Intern",
+    company: "Kwagei Group of Companies",
+    period: "May 2024 – October 2025",
+    description:
+      "Gained hands-on, full-stack experience while supporting the development of web-based applications.",
+    highlights: [
+      "Developed and deployed a real-time visitor-management system",
+      "Facilitated a Python course for kids at the Orange Digital Center",
+      "Worked with PostgreSQL databases and assisted in building backend services and API integrations",
+      "Participated in code reviews, testing, and bug fixing to improve application quality",
+    ],
+  },
+  {
+    role: "Software Engineering Trainee",
+    company: "Kwagei Innovative Training (KIT)",
+    period: "2022 – 2025",
+    description:
+      "Where it all started — I wrote my first lines of code here in 2022 and learned software engineering from the ground up.",
+    highlights: [
+      "Built up the fundamentals: programming, problem-solving, and algorithms",
+      "Started with JavaScript and Python and built my first real projects",
+      "Earned a Certificate of Completion in 2025",
     ],
   },
 ];

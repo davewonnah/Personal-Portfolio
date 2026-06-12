@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Fraunces } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -10,18 +10,25 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+// Editorial display serif for headings — soft optical sizing, a touch of warmth
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
+
 export const metadata: Metadata = {
   title: {
     default: "Dave Wonnah | Software Engineer",
     template: "%s | Dave Wonnah",
   },
   description:
-    "Software engineer passionate about building exceptional digital experiences.",
+    "Software engineer building full-stack web apps — clean data models, solid APIs, and interfaces that feel effortless to use.",
   metadataBase: new URL("https://davewonnah.dev"),
   openGraph: {
     title: "Dave Wonnah | Software Engineer",
     description:
-      "Software engineer passionate about building exceptional digital experiences.",
+      "Software engineer building full-stack web apps — clean data models, solid APIs, and interfaces that feel effortless to use.",
     url: "https://davewonnah.dev",
     siteName: "Dave Wonnah",
     locale: "en_US",
@@ -31,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dave Wonnah | Software Engineer",
     description:
-      "Software engineer passionate about building exceptional digital experiences.",
+      "Software engineer building full-stack web apps — clean data models, solid APIs, and interfaces that feel effortless to use.",
   },
   robots: {
     index: true,
@@ -45,7 +52,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${inter.variable} ${fraunces.variable} h-full`}
+      suppressHydrationWarning
+    >
       <body className="min-h-full flex flex-col antialiased">
         <ThemeProvider
           attribute="class"

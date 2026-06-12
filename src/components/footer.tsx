@@ -2,17 +2,24 @@ import { siteConfig } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border px-4 py-8 sm:px-6">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 sm:flex-row">
-        <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
-        </p>
-        <div className="flex items-center gap-4">
+    <footer className="border-t border-border px-4 py-10 sm:px-6">
+      <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
+        <div>
+          <p className="font-serif text-lg font-medium">
+            {siteConfig.name.split(" ")[0]}
+            <span className="text-accent">.</span>
+          </p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} {siteConfig.name}. Built by hand,
+            not by template.
+          </p>
+        </div>
+        <div className="flex items-center gap-5 text-sm text-muted-foreground">
           <a
             href={siteConfig.links.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="underline-offset-4 transition-colors hover:text-accent hover:underline"
           >
             GitHub
           </a>
@@ -20,7 +27,7 @@ export function Footer() {
             href={siteConfig.links.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="underline-offset-4 transition-colors hover:text-accent hover:underline"
           >
             LinkedIn
           </a>
@@ -28,7 +35,7 @@ export function Footer() {
             href={siteConfig.links.twitter}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+            className="underline-offset-4 transition-colors hover:text-accent hover:underline"
           >
             Twitter
           </a>

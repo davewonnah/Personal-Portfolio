@@ -9,10 +9,14 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-md">
-      <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6">
         {/* Logo */}
-        <a href="#" className="text-lg font-bold tracking-tight">
-          {siteConfig.name}
+        <a
+          href="#"
+          className="font-serif text-xl font-medium tracking-tight"
+        >
+          {siteConfig.name.split(" ")[0]}
+          <span className="text-accent">.</span>
         </a>
 
         {/* Desktop nav */}
@@ -21,7 +25,7 @@ export function Navbar() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="rounded-full px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-accent"
             >
               {item.label}
             </a>
@@ -78,7 +82,7 @@ export function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div className="border-t border-border md:hidden">
-          <div className="mx-auto flex max-w-6xl flex-col gap-1 px-4 py-3 sm:px-6">
+          <div className="mx-auto flex max-w-5xl flex-col gap-1 px-4 py-3 sm:px-6">
             {siteConfig.navItems.map((item) => (
               <a
                 key={item.href}

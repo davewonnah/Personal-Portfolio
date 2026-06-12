@@ -1,41 +1,44 @@
 import { skillCategories } from "@/data/skills";
+import { SectionHeader } from "./section-header";
+import { SkillIcon } from "./skill-icons";
 
 export function Skills() {
   return (
-    <section id="skills" className="border-t border-border px-4 py-20 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-6xl">
-        {/* Section Header */}
-        <div className="mb-12 text-center">
-          <p className="mb-2 text-sm font-medium tracking-widest uppercase text-accent">
-            Skills
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            My Tech Stack
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Technologies and tools I use to bring ideas to life.
-          </p>
-        </div>
+    <section
+      id="skills"
+      className="border-t border-border px-4 py-20 sm:px-6 sm:py-28"
+    >
+      <div className="mx-auto max-w-5xl">
+        <SectionHeader
+          index="02"
+          eyebrow="Toolkit"
+          title="What I reach for"
+          description="Not every tool I've touched — just the ones I keep coming back to."
+        />
 
-        {/* Skills Grid */}
-        <div className="grid gap-8 sm:grid-cols-2">
+        {/* Categories as an editorial definition list */}
+        <div className="divide-y divide-border border-y border-border">
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className="rounded-2xl border border-border bg-muted/30 p-6"
+              className="grid gap-4 py-7 sm:grid-cols-[180px_1fr] sm:gap-8"
             >
-              <h3 className="mb-4 text-lg font-semibold">{category.title}</h3>
-              <div className="flex flex-wrap gap-2">
+              <h3 className="font-serif text-xl font-medium text-foreground">
+                {category.title}
+              </h3>
+              <ul className="flex flex-wrap gap-2.5">
                 {category.skills.map((skill) => (
-                  <span
+                  <li
                     key={skill.name}
-                    className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-background px-3 py-1.5 text-sm font-medium transition-colors hover:border-accent/50 hover:text-accent"
+                    className="group inline-flex items-center gap-2 rounded-full border border-border bg-paper px-3.5 py-1.5 text-sm text-foreground transition-colors hover:border-accent/60 hover:text-accent"
                   >
-                    <span className="text-base">{skill.icon}</span>
+                    <span className="text-muted-foreground transition-colors group-hover:text-accent">
+                      <SkillIcon name={skill.name} />
+                    </span>
                     {skill.name}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

@@ -1,14 +1,15 @@
 export const siteConfig = {
   name: "Dave Wonnah",
-  title: "Software Engineer",
+  title: "A software engineer",
+  location: "Based in Monrovia, remote-friendly",
   description:
-    "Software engineer passionate about building exceptional digital experiences.",
+    "I spend most of my time on full-stack web apps — shaping the data model, wiring up the API, and sweating the small interface details until the whole thing feels effortless to use.",
   url: "https://davewonnah.dev",
   links: {
     github: "https://github.com/davewonnah",
     linkedin: "https://linkedin.com/in/davewonnah",
     twitter: "https://twitter.com/davewonnah",
-    email: "hello@davewonnah.dev",
+    email: "wonnahdave@gmail.com",
   },
   navItems: [
     { label: "About", href: "#about" },

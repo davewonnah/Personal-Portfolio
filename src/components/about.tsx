@@ -1,94 +1,93 @@
+import Image from "next/image";
 import { siteConfig } from "@/lib/constants";
+import { SectionHeader } from "./section-header";
 
-const highlights = [
-  { label: "Years Experience", value: "3+" },
-  { label: "Projects Completed", value: "20+" },
-  { label: "Technologies", value: "15+" },
+const figures = [
+  { label: "Years writing code", value: "2+" },
+  { label: "Things shipped", value: "20+" },
+  { label: "Tools in rotation", value: "15+" },
 ];
 
 export function About() {
   return (
-    <section id="about" className="border-t border-border px-4 py-20 sm:px-6 sm:py-24">
-      <div className="mx-auto max-w-6xl">
-        {/* Section Header */}
-        <div className="mb-12 text-center">
-          <p className="mb-2 text-sm font-medium tracking-widest uppercase text-accent">
-            About Me
-          </p>
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Get to know me
-          </h2>
-        </div>
+    <section
+      id="about"
+      className="border-t border-border px-4 py-20 sm:px-6 sm:py-28"
+    >
+      <div className="mx-auto max-w-5xl">
+        <SectionHeader index="01" eyebrow="About" title="A little about me" />
 
-        {/* Content Grid */}
-        <div className="grid gap-12 md:grid-cols-2 md:items-center">
-          {/* Profile Image Placeholder */}
-          <div className="flex justify-center">
-            <div className="relative h-72 w-72 overflow-hidden rounded-2xl border border-border bg-muted sm:h-80 sm:w-80">
-              <div className="flex h-full w-full items-center justify-center text-6xl font-bold text-muted-foreground/30">
-                {siteConfig.name
-                  .split(" ")
-                  .map((n) => n[0])
-                  .join("")}
-              </div>
+        <div className="grid gap-12 md:grid-cols-[260px_1fr] md:items-start md:gap-16">
+          {/* Profile image — offset, with a caption like a magazine plate */}
+          <figure className="mx-auto w-full max-w-[260px]">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm border border-border bg-muted">
+              <Image
+                src="/dave-image.png"
+                alt={siteConfig.name}
+                fill
+                className="object-cover grayscale transition-[filter] duration-500 hover:grayscale-0"
+                priority
+              />
             </div>
-          </div>
+            <figcaption className="mt-3 font-mono text-xs text-muted-foreground">
+              {siteConfig.name} — at the desk, mid-thought.
+            </figcaption>
+          </figure>
 
           {/* Bio */}
           <div>
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              I&apos;m a passionate software engineer who loves turning ideas into
-              real, impactful products. I specialize in building full-stack web
-              applications with modern technologies and a focus on clean,
-              maintainable code.
+            <p className="text-lg leading-relaxed text-foreground [&::first-letter]:font-serif [&::first-letter]:mr-1 [&::first-letter]:float-left [&::first-letter]:text-6xl [&::first-letter]:font-medium [&::first-letter]:leading-[0.8] [&::first-letter]:text-accent">
+              I&apos;m an engineer who got into this work because I liked taking
+              a vague idea and pushing on it until it became something real you
+              could click. That hasn&apos;t changed. I care about clean code,
+              but mostly because it&apos;s how you keep a product honest as it
+              grows.
             </p>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              When I&apos;m not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or writing about software
-              engineering on my blog.
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+              Away from the keyboard I&apos;m usually reading about how other
+              people build things, poking at an open-source repo, or writing up
+              what I&apos;ve learned on the blog. I think out loud — it&apos;s
+              how the lessons stick.
             </p>
 
-            {/* Highlights */}
-            <div className="mt-8 grid grid-cols-3 gap-4">
-              {highlights.map((item) => (
-                <div
-                  key={item.label}
-                  className="rounded-xl border border-border bg-muted/50 p-4 text-center"
-                >
-                  <p className="text-2xl font-bold text-accent">{item.value}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
+            {/* Figures — set as editorial numerals, not boxed stat cards */}
+            <dl className="mt-10 flex flex-wrap gap-x-10 gap-y-6 border-t border-border pt-6">
+              {figures.map((item) => (
+                <div key={item.label}>
+                  <dt className="font-serif text-3xl font-medium text-foreground">
+                    {item.value}
+                  </dt>
+                  <dd className="mt-1 text-xs text-muted-foreground">
                     {item.label}
-                  </p>
+                  </dd>
                 </div>
               ))}
-            </div>
+            </dl>
 
-            {/* Resume Button */}
-            <div className="mt-8">
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-border px-5 text-sm font-medium transition-colors hover:bg-muted"
+            {/* Resume link */}
+            <a
+              href="/resume"
+              className="group mt-8 inline-flex items-center gap-2 text-sm font-medium text-foreground underline-offset-4 transition-colors hover:text-accent"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                  <polyline points="7 10 12 15 17 10" />
-                  <line x1="12" x2="12" y1="15" y2="3" />
-                </svg>
-                Download Resume
-              </a>
-            </div>
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" x2="12" y1="15" y2="3" />
+              </svg>
+              <span className="border-b border-border pb-0.5 group-hover:border-accent">
+                View my résumé
+              </span>
+            </a>
           </div>
         </div>
       </div>

@@ -9,34 +9,81 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: "E-Commerce Platform",
+    title: "PowerPicker",
     description:
-      "A full-stack e-commerce application with product management, cart functionality, payment integration, and admin dashboard.",
-    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
-    github: "https://github.com/davewonnah/ecommerce-platform",
-    live: "https://ecommerce.davewonnah.dev",
+      "A voting and elections platform for schools, universities, and small organizations — set up a poll, manage candidates, and run a clean, tamper-resistant vote.",
+    tags: ["TypeScript", "CSS", "Elections"],
+    github: "https://github.com/davewonnah/powerPicker",
   },
   {
-    title: "Task Management App",
+    title: "LNRCS Leadership Directory",
     description:
-      "A real-time collaborative task management tool with drag-and-drop boards, team workspaces, and notifications.",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB", "Tailwind CSS"],
-    github: "https://github.com/davewonnah/task-manager",
-    live: "https://tasks.davewonnah.dev",
+      "A directory presenting the leadership of the LNRCS — a TypeScript site I built and shipped to production on Vercel.",
+    tags: ["TypeScript", "CSS", "Vercel"],
+    github: "https://github.com/davewonnah/lnrcs-leaderships",
+    live: "https://lnrcs-leaderships.vercel.app",
   },
   {
-    title: "AI Chat Interface",
+    title: "LNRCS Invoice App",
     description:
-      "An AI-powered chat application with conversation history, multiple model support, and markdown rendering.",
-    tags: ["Next.js", "TypeScript", "OpenAI API", "Redis", "Vercel AI SDK"],
-    github: "https://github.com/davewonnah/ai-chat",
+      "An invoice generator that turns billing into a quick form-fill — create, preview, and export invoices for the LNRCS workflow with as little friction as possible.",
+    tags: ["TypeScript", "CSS"],
+    github: "https://github.com/davewonnah/invioce-app-lnrcs",
   },
   {
-    title: "Developer Blog",
+    title: "OnTime",
     description:
-      "A performant blog built with MDX, featuring syntax highlighting, search functionality, and RSS feed generation.",
-    tags: ["Next.js", "MDX", "Tailwind CSS", "Vercel"],
-    github: "https://github.com/davewonnah/dev-blog",
-    live: "https://blog.davewonnah.dev",
+      "A web app built with Vue and SCSS, deployed on Vercel — a project where I leaned into component-driven UI and a clean, responsive layout.",
+    tags: ["Vue", "SCSS", "JavaScript"],
+    github: "https://github.com/davewonnah/ontime-web",
+    live: "https://ontime-web-nine.vercel.app",
+  },
+  {
+    title: "Quiz App",
+    description:
+      "My CS50 final project — a quiz application with a Python backend and a lightweight front end, deployed live for anyone to try.",
+    tags: ["Python", "JavaScript", "HTML"],
+    github: "https://github.com/davewonnah/Quiz-App",
+    live: "https://quiz-app-self-three.vercel.app",
+  },
+  {
+    title: "Wordle Clone",
+    description:
+      "A from-scratch take on the Wordle word game — six guesses, an on-screen keyboard, and color feedback on every letter, all in vanilla JavaScript.",
+    tags: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/davewonnah/wordle",
+    live: "https://davewonnah.github.io/wordle/",
+  },
+  {
+    title: "Password Generator",
+    description:
+      "A small tool for generating strong, random passwords — pick a length and character set and copy a secure password in one click.",
+    tags: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/davewonnah/Password-Generator",
+    live: "https://davewonnah.github.io/Password-Generator/",
+  },
+  {
+    title: "Phone Book",
+    description:
+      "A simple contact book for adding, searching, and managing phone numbers — built in vanilla JavaScript to keep the logic front and center.",
+    tags: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/davewonnah/My_Phone_Book",
+    live: "https://davewonnah.github.io/My_Phone_Book/index.html",
+  },
+  {
+    title: "To-Do List",
+    description:
+      "A classic to-do app — add, check off, and clear tasks — written in plain JavaScript to nail the DOM-and-state fundamentals.",
+    tags: ["JavaScript", "HTML", "CSS"],
+    github: "https://github.com/davewonnah/Todo-list-app",
+    live: "https://davewonnah.github.io/Todo-list-app/index.html",
+  },
+  {
+    title: "Registration Form",
+    description:
+      "An early class project: a styled, validated registration form built with plain HTML and CSS — one of the first things I shipped.",
+    tags: ["HTML", "CSS"],
+    github: "https://github.com/davewonnah/Registration-form",
+    live: "https://davewonnah.github.io/Registration-form/",
   },
 ];

@@ -8,40 +8,84 @@
   --color-border: var(--border);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
+  --color-paper: var(--paper);
   --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --border: #e2e8f0;
-  --accent: #3b82f6;
-  --accent-foreground: #ffffff;
+  /* Warm paper, ink, burnt-orange accent */
+  --background: #faf8f4;
+  --paper: #f4efe6;
+  --foreground: #211d18;
+  --muted: #efe9dd;
+  --muted-foreground: #6f6557;
+  --border: #e3dccd;
+  --accent: #c2410c;
+  --accent-foreground: #faf8f4;
 }
 
 .dark {
-  --background: #0b1120;
-  --foreground: #e2e8f0;
-  --muted: #1e293b;
-  --muted-foreground: #94a3b8;
-  --border: #1e293b;
-  --accent: #60a5fa;
-  --accent-foreground: #0b1120;
+  --background: #15130e;
+  --paper: #1d1a13;
+  --foreground: #ece5d7;
+  --muted: #221e16;
+  --muted-foreground: #9c9382;
+  --border: #2e2920;
+  --accent: #f97316;
+  --accent-foreground: #15130e;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  /* Faint paper grain so the background isn't a dead flat fill */
+  background-image: radial-gradient(
+    var(--border) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 22px 22px;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Editorial display type lives on the serif */
+.font-serif {
+  font-family: var(--font-serif), Georgia, serif;
+  font-optical-sizing: auto;
+}
+
 ::selection {
   background-color: var(--accent);
   color: var(--accent-foreground);
+}
+
+/* Hand-drawn-feel underline used under section eyebrows */
+.rule {
+  height: 1px;
+  background-image: linear-gradient(
+    to right,
+    var(--accent) 0,
+    var(--accent) 28px,
+    var(--border) 28px,
+    var(--border) 100%
+  );
+}
+
+/* Print: strip the chrome so the résumé prints as a clean sheet */
+@media print {
+  header,
+  footer,
+  [data-no-print] {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    background-image: none;
+  }
 }
